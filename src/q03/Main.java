@@ -11,22 +11,18 @@ public class Main {
         int left = 0, right = n - 1;
         int num = 1;
 
-        // Fill spiral
         while (top <= bottom && left <= right) {
 
-            // left → right
             for (int i = left; i <= right; i++) {
                 mat[top][i] = num++;
             }
             top++;
 
-            // top → bottom
             for (int i = top; i <= bottom; i++) {
                 mat[i][right] = num++;
             }
             right--;
 
-            // right → left
             if (top <= bottom) {
                 for (int i = right; i >= left; i--) {
                     mat[bottom][i] = num++;
@@ -34,7 +30,6 @@ public class Main {
                 bottom--;
             }
 
-            // bottom → top
             if (left <= right) {
                 for (int i = bottom; i >= top; i--) {
                     mat[i][left] = num++;
@@ -58,6 +53,6 @@ public class Main {
             diag += mat[i][i];
         }
 
-        System.out.println("Diagonal: " + diag);
+        System.out.println(diag);
     }
 }
